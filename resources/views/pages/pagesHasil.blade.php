@@ -25,7 +25,7 @@
 <div class="row mt-4">
     <div class="col-md-3"></div>
     <div class="col-md-6 mb-5">
-        <a href="{{ url('/', []) }}" class="btn btn-sm btn-danger"><< Kembali</a>
+        <a href="{{ url('/', []) }}" class="btn btn-sm btn-danger mb-2"><< Kembali</a>
         @if ($buka===true)
         <div class="px-2">
             <div class="alert alert-warning" role="alert">
@@ -33,9 +33,10 @@
                 <h4 class="my-0 py-0 text-bold">PERHATIAN</h4>
                 <p class="my-0 py-0 text-bold">Syarat dan Ketentuan Pengambilan Surat Kelulusan:</p>
                 <ul >
-                    <li>Siswa yg dinyatakan lulus dapat mengambil surat ket lulus tanggal <b>8 Mei s.d 12 Mei 2023</b></li>
+                    <li>Siswa/i yg dinyatakan lulus dapat mengambil surat ket lulus di <b>Sekolah</b></li>
                     <li>Pengambilan SKL memakai baju bebas rapi, sopan dan bersepatu <b>(tidak diperkenankan menggunakan kaos oblong dan sandal)</b></li>
-                    <li>Siswa menyelesaikan kewajiban sekolah <b>(SPP dan peminjaman buku perpustakaan)</b></li>
+                    <li>Siswa/i menyelesaikan kewajiban sekolah </li>
+                    <li>Siswa/i dilarang keras melakukan Konvoi atau vandalisme (Corat-Coret) dalam bentuk apapun!</li>
                 </ul>
             </div>
             </div>
