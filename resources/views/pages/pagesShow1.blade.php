@@ -23,8 +23,8 @@
 @section('content')
 
 <div class="row mt-5">
-    <div class="col-md-3"></div>
-    <div class="col-md-6 ">
+    <div class="col-md-4"></div>
+    <div class="col-md-4 ">
         <div class="card m-2">
             <div class="card-header bg-light">
                 <h5 class="m-0" class="text-bold"><b>IDENTITAS</b></h5>
@@ -37,7 +37,7 @@
                         <select required class="js-example-basic-single form-control form-control-sm" style="width: 100%" name="siswa">
                             <option value="">Pilih Siswa</option>
                             @foreach ($siswa as $item)
-                            <option value="{{$item->idsiswa}}">{{ucwords($item->nama)}}</option>
+                            <option value="{{$item->idsiswa}}">{{strtoupper($item->nama)}}</option>
 
                             @endforeach
                         </select>

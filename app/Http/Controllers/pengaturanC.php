@@ -69,7 +69,7 @@ class pengaturanC extends Controller
             $idpengaturankelulusan = pengaturanM::first()->idpengaturankelulusan;
 
             $update = pengaturanM::where('idpengaturankelulusan', $idpengaturankelulusan)->update([
-                'open' => $open2,
+                'open2' => $open2,
             ]);
 
 

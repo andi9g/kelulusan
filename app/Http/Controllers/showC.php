@@ -46,7 +46,7 @@ class showC extends Controller
 
             $open = strtotime(pengaturanM::first()->open);
             $tanggal = strtotime(date('Y-m-d H:i'));
-            $buka = true;
+            $buka = false;
             if($open <= $tanggal) {
                 $buka = true;
             }

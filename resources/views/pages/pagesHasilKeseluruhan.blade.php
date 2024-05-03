@@ -15,7 +15,7 @@
 </script>
 @endsection
 
-@section('kelulusan1')
+@section('kelulusan2')
     active
 @endsection
 
@@ -26,8 +26,20 @@
     <div class="col-md-3"></div>
     <div class="col-md-6 mb-5">
         @if ($buka===true)
-
-            <div class="card m-2 mt-4">
+            <div class="px-2">
+            <div class="alert alert-warning" role="alert">
+              <div style="font-size: 11pt">
+                <h4 class="my-0 py-0 text-bold">PERHATIAN</h4>
+                <p class="my-0 py-0 text-bold">Syarat dan Ketentuan Pengambilan Surat Kelulusan:</p>
+                <ul >
+                    <li>Siswa yg dinyatakan lulus dapat mengambil surat ket lulus tanggal <b>8 Mei s.d 12 Mei 2023</b></li>
+                    <li>Pengambilan SKL memakai baju bebas rapi, sopan dan bersepatu <b>(tidak diperkenankan menggunakan kaos oblong dan sandal)</b></li>
+                    <li>Siswa menyelesaikan kewajiban sekolah <b>(SPP dan peminjaman buku perpustakaan)</b></li>
+                </ul>
+            </div>
+            </div>
+        </div>
+        <div class="card m-2 mt-4">
                 <div class="card-header bg-light">
                     <h5 class="m-0" class="text-bold"><b>KETERANGAN LULUS</b></h5>
                 </div>
@@ -50,6 +62,8 @@
 
 
         @else
+        
+        
         <div class="card m-2">
             <div class="card-header bg-light">
                 <h5 class="m-0" class="text-bold"><b>PERHATIAN</b></h5>

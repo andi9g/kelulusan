@@ -47,6 +47,8 @@
             <div class="card-header">
                 <h5>WAKTU KELULUSAN DIBUKA (persentase kelulusan)</h5>
             </div>
+            <form action="{{ route('pengaturan.open2', []) }}" method="post">
+                @csrf
             <div class="card-body">
                 <div class='form-group'>
                     <label for='foropen2' class='text-capitalize'>Waktu Lulus (PERSENTASE)</label>
@@ -65,6 +67,7 @@
                     UPDATE WAKTU
                 </button>
             </div>
+            </form>
         </div>
     </div>
 </div>

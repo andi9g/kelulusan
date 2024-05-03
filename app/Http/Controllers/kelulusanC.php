@@ -155,7 +155,7 @@ class kelulusanC extends Controller
 
     public function lulussemua(Request $request)
     {
-        try{
+        // try{
 
             $siswa = siswa::join('jurusan', 'jurusan.idjurusan', 'siswa.idjurusan')
             ->join('kelas', 'kelas.idkelas', 'siswa.idkelas')
@@ -166,7 +166,7 @@ class kelulusanC extends Controller
             kelulusan::truncate();
             foreach ($siswa as $sis) {
                 $store = new kelulusan;
-                $store->nisn = $sis->nisn;
+                $store->nisn = "$sis->nisn";
                 $store->ket = "lulus";
                 $store->save();
             }
@@ -174,9 +174,9 @@ class kelulusanC extends Controller
             if($store) {
                 return redirect()->back()->with('toast_success', 'success');
             }
-        }catch(\Throwable $th){
-            return redirect()->back()->with('toast_error', 'Terjadi kesalahan');
-        }
+        // }catch(\Throwable $th){
+        //     return redirect()->back()->with('toast_error', 'Terjadi kesalahan');
+        // }
     }
 
     public function lulusreset(Request $request)
