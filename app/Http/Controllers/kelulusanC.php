@@ -36,8 +36,18 @@ class kelulusanC extends Controller
         $update = siswa::join('jurusan', 'jurusan.idjurusan', 'siswa.idjurusan')
         ->join('kelas', 'kelas.idkelas', 'siswa.idkelas')
         ->where('kelas.kelas', 'XII')
-        ->where("siswa.nis", null)->count();
-        dd($update);
+        ->where("siswa.nis", null)
+        ->select("siswa.idsiswa")
+        ->get();
+
+        foreach ($update as $up) {
+            $idsiswa = $up->idsiswa;
+            siswa::where("idsiswa", $idsiswa)->first()->update([
+                "nis" => uniqid(),
+            ]);
+        }
+        dd("selesai");
+
 
         // $jumlahsiswa = siswa::join('jurusan', 'jurusan.idjurusan', 'siswa.idjurusan')
         // ->join('kelas', 'kelas.idkelas', 'siswa.idkelas')
