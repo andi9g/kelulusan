@@ -300,6 +300,7 @@
                         <th nowrap class="text-uppercase">{{$s->nisn}}</th>
                         <th nowrap class="text-uppercase">{{sprintf("%03s", $s->idsiswa)}}</th>
                         <td nowrap class="text-uppercase">{{$s->nama}}</td>
+                        {{ dd((int)sprintf("%03s", $s->idsiswa)) }}
                         <td>{{$s->jurusan}}</td>
                         @php
                             $dataku1 = DB::table('tunggakanbuku')->where('nisn', $s->nisn)->count();
