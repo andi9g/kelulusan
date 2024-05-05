@@ -33,22 +33,28 @@ class kelulusanC extends Controller
         ->where('jurusan.idjurusan', 'like', "$jurusan%")
         ->paginate(15);
 
-        $jumlahsiswa = siswa::join('jurusan', 'jurusan.idjurusan', 'siswa.idjurusan')
+        $update = siswa::join('jurusan', 'jurusan.idjurusan', 'siswa.idjurusan')
         ->join('kelas', 'kelas.idkelas', 'siswa.idkelas')
-        ->where('kelas.kelas', 'XII')->count();
-        $lulus = kelulusan::where('ket', 'lulus')->count();
+        ->where('kelas.kelas', 'XII')
+        ->where("siswa.nis", null)->count();
+        dd($update);
 
-        $hitung = $lulus / $jumlahsiswa * 100;
+        // $jumlahsiswa = siswa::join('jurusan', 'jurusan.idjurusan', 'siswa.idjurusan')
+        // ->join('kelas', 'kelas.idkelas', 'siswa.idkelas')
+        // ->where('kelas.kelas', 'XII')->count();
+        // $lulus = kelulusan::where('ket', 'lulus')->count();
 
-        // dd(siswa::get());
-        $siswa->appends($request->only(["limit",'keyword','jurusan']));
+        // $hitung = $lulus / $jumlahsiswa * 100;
 
-        return view('pages.pagesKelulusan', [
-            'siswa' => $siswa,
-            'jurusan' => $djurusan,
-            'pjur' => $jurusan,
-            'hitung' => $hitung,
-        ]);
+        // // dd(siswa::get());
+        // $siswa->appends($request->only(["limit",'keyword','jurusan']));
+
+        // return view('pages.pagesKelulusan', [
+        //     'siswa' => $siswa,
+        //     'jurusan' => $djurusan,
+        //     'pjur' => $jurusan,
+        //     'hitung' => $hitung,
+        // ]);
     }
 
     public function hapusbuku(Request $request, $nisn)
