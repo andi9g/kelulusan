@@ -57,7 +57,7 @@ class showC extends Controller
             ->join('kelas', 'kelas.idkelas', 'siswa.idkelas')
             ->where('kelas.kelas', 'XII')
             ->select('siswa.*', 'jurusan.namajurusan')
-            ->where('siswa.idsiswa', $idsiswa)->where('siswa.nisn', $nisn)->where('siswa.idsiswa', $passid);
+            ->where('siswa.idsiswa', $idsiswa)->where('siswa.nisn', $nisn)->where('siswa.nis', $passid);
 
             if($cek->count()===1){
                 $data = $cek->first();
