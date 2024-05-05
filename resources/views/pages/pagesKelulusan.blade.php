@@ -255,7 +255,7 @@
                     <div class="col-6 text-bold">
                         <h4 class="text-bold">LULUS : {{$hitung}}%</h4>
                     </div>
-                    
+
                     <div class="col-6 text-right">
                         <form action="{{ route('kelulusan.lulus.reset', []) }}" method="post" class="d-inline" onclick="return confirm('Yakin ingin reset kelulusan?')">
                             @csrf
@@ -279,6 +279,8 @@
                 <thead>
                     <tr>
                         <th>No</th>
+                        <th>NISN</th>
+                        <th>PassID</th>
                         <th>Nama</th>
                         <th>Jurusan</th>
                         @if (Session::get('posisi')==='perpus')
@@ -295,6 +297,8 @@
                     @foreach ($siswa as $s)
                     <tr>
                         <td nowrap width="4px">{{$loop->iteration + $siswa->firstItem() - 1}}</td>
+                        <th nowrap class="text-uppercase">{{$s->nisn}}</th>
+                        <th nowrap class="text-uppercase">{{$s->idsiswa}}</th>
                         <td nowrap class="text-uppercase">{{$s->nama}}</td>
                         <td>{{$s->jurusan}}</td>
                         @php

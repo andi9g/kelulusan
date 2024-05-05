@@ -38,11 +38,13 @@ class showC extends Controller
         $request->validate([
             'siswa'=>'required',
             'nisn'=>'required',
+            'passid'=>'required',
         ]);
 
         try{
             $idsiswa = $request->siswa;
             $nisn = $request->nisn;
+            $passid = $request->passid;
 
             $open = strtotime(pengaturanM::first()->open);
             $tanggal = strtotime(date('Y-m-d H:i'));
@@ -55,7 +57,7 @@ class showC extends Controller
             ->join('kelas', 'kelas.idkelas', 'siswa.idkelas')
             ->where('kelas.kelas', 'XII')
             ->select('siswa.*', 'jurusan.namajurusan')
-            ->where('siswa.idsiswa', $idsiswa)->where('siswa.nisn', $nisn);
+            ->where('siswa.idsiswa', $idsiswa)->where('siswa.nisn', $nisn)->where('siswa.idsiswa', $passid);
 
             if($cek->count()===1){
                 $data = $cek->first();

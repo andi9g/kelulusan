@@ -180,7 +180,7 @@
 
 
         @else
-        
+
         <div class="card m-2">
             <div class="card-header bg-light">
                 <h5 class="m-0" class="text-bold"><b>PERHATIAN</b></h5>
