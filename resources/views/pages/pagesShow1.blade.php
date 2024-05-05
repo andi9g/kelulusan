@@ -48,7 +48,7 @@
                     </div>
                     <div class='form-group'>
                         <label for='passid' class='text-capitalize'>Pass ID</label>
-                        <input type='number' name='passid' id='passid' class='form-control form-control-sm' placeholder='masukan Pass ID'>
+                        <input type='text' name='passid' id='passid' class='form-control form-control-sm' placeholder='masukan Pass ID'>
                     </div>
 
                 </div>
