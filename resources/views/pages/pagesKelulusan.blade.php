@@ -298,8 +298,7 @@
                     <tr>
                         <td nowrap width="4px">{{$loop->iteration + $siswa->firstItem() - 1}}</td>
                         <th nowrap class="text-uppercase">{{$s->nisn}}</th>
-                        <th nowrap class="text-uppercase">{{$s->nis}}</th>
-                        <th nowrap class="text-uppercase">{{$s->idsiswa}}</th>
+                        <th nowrap class="text-uppercase">{{sprintf("%03s", $s->idsiswa)}}</th>
                         <td nowrap class="text-uppercase">{{$s->nama}}</td>
                         <td>{{$s->jurusan}}</td>
                         @php
