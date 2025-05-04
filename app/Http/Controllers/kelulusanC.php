@@ -7,6 +7,7 @@ use App\Models\jurusan;
 use App\Models\buku;
 use App\Models\kelulusan;
 use App\Models\spp;
+use PDF;
 use Illuminate\Http\Request;
 
 class kelulusanC extends Controller
@@ -52,6 +53,44 @@ class kelulusanC extends Controller
             'hitung' => $hitung,
         ]);
     }
+
+    public function generate(Request $request)
+    {
+
+        try{
+
+            $siswa = siswa::where("idkelas", 3)->get();
+
+            foreach ($siswa as $item) {
+                $passID = substr(bin2hex(random_bytes(3)), 0, 5);
+
+                $item->update([
+                    "nis" => $passID,
+                ]);
+
+            }
+            return redirect()->back()->with('success', 'Success');
+        }catch(\Throwable $th){
+            return redirect()->back()->with('toast_error', 'Terjadi kesalahan');
+        }
+
+    }
+
+    public function cetak(Request $request)
+    {
+        $siswa = siswa::where("idkelas", 3)
+        ->orderBy("idjurusan", "asc")
+        ->orderBy("nama", "asc")
+        ->get();
+
+        $pdf = PDF::loadview("pages.laporan.siswa", [
+            "siswa" => $siswa,
+        ]);
+
+        return $pdf->stream("laporan.pdf");
+
+    }
+
 
     public function hapusbuku(Request $request, $nisn)
     {

@@ -9,4 +9,11 @@ class jurusan extends Model
 {
     use HasFactory;
     protected $table = 'jurusan';
+    protected $primaryKey = 'idjurusan';
+    protected $guarded = [];
+
+    public function siswa()
+    {
+        return $this->hasOne(siswa::class, 'idjurusan','idjurusan');
+    }
 }

@@ -252,11 +252,11 @@
             @enderror
                 <div class="row">
                     @if (Session::get('posisi')==='tu')
-                    <div class="col-6 text-bold">
+                    <div class="col-4 text-bold">
                         <h4 class="text-bold">LULUS : {{$hitung}}%</h4>
                     </div>
 
-                    <div class="col-6 text-right">
+                    <div class="col-8 text-right">
                         <form action="{{ route('kelulusan.lulus.reset', []) }}" method="post" class="d-inline" onclick="return confirm('Yakin ingin reset kelulusan?')">
                             @csrf
                             @method('delete')
@@ -271,9 +271,17 @@
                                 <i class="fa fa-graduation-cap"></i> LULUSKAN SEMUA
                             </button>
                         </form>
+                        <form action="{{ route('generate.passid', []) }}" method="post" class="d-inline">
+                            @csrf
+                            <button type="submit" class="btn btn-primary" type="button" data-toggle="modal" data-target="#passID">Generate PassID</button>
+                        </form>
+
+                        <a href="{{ route('cetak.laporan', []) }}" class="btn btn-success d-inline">CETAK LAPORAN</a>
                     </div>
                     @endif
                 </div>
+
+
 
             <table class="table table-striped table-bordered table-hover table-sm">
                 <thead>

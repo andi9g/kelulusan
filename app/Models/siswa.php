@@ -11,4 +11,10 @@ class siswa extends Model
     protected $table = 'siswa';
     protected $primaryKey = "idsiswa";
     protected $guarded = [];
+
+
+    public function jurusan()
+    {
+        return $this->belongsTo(jurusan::class, 'idjurusan','idjurusan');
+    }
 }

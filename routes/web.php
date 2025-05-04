@@ -32,6 +32,9 @@ Route::middleware(['GerbangLogin'])->group(function () {
         Route::post('kelulusan/spp/{nisn}', 'kelulusanC@spp')->name('kelulusan.spp');
         Route::delete('kelulusan/spp/hapus/{nisn}', 'kelulusanC@hapusspp')->name('kelulusan.spp.hapus');
 
+        Route::post("generate/kelulusan", "kelulusanC@generate")->name("generate.passid");
+        Route::get("cetaklaporanpassid", "kelulusanC@cetak")->name("cetak.laporan");
+
         Route::post('kelulusan/lulus/{nisn}', 'kelulusanC@lulus')->name('kelulusan.lulus');
         Route::post('kelulusan/semua/lulus', 'kelulusanC@lulussemua')->name('kelulusan.lulus.semua');
         Route::delete('kelulusan/semua/reset', 'kelulusanC@lulusreset')->name('kelulusan.lulus.reset');
